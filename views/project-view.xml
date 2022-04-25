@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="bottom_window">
+            <field name="name">learning_odoo.project</field>
+            <field name="model">learning_odoo.project</field>
+            <field name="arch" type="xml">
+                <form string="Project form">
+                    <group>
+                        <field name="title"/>
+                        <field name="client_id"/>
+                    </group>
+
+                    <notebook colspan="4">
+                        <page string="Project title">
+                            <field name="title"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="learning_odoo.projects_list">
+            <field name="name">learning_odoo list</field>
+            <field name="model">learning_odoo.project</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="title"/>
+                    <field name="start_date"/>
+                    <field name="end_date"/>
+                    <field name="client_id"/>
+                </tree>
+            </field>
+        </record>
+        <!-- actions opening views on models -->
+
+        <record model="ir.actions.act_window" id="learning_odoo.action_window">
+            <field name="name">learning_odoo window</field>
+            <field name="res_model">learning_odoo.project</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Create the first course
+                </p>
+            </field>
+        </record>
+        <!-- server action to the one above -->
+
+        <!--        <record model="ir.actions.server" id="learning_odoo.action_server">-->
+        <!--            <field name="name">learning_odoo server</field>-->
+        <!--            <field name="model_id" ref="model_learning_odoo_project"/>-->
+        <!--            <field name="state">code</field>-->
+        <!--            <field name="code">-->
+        <!--                action = {-->
+        <!--                "type": "ir.actions.act_window",-->
+        <!--                "view_mode": "tree,form",-->
+        <!--                "res_model": model._name,-->
+        <!--                }-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+
+        <!-- Top menu item -->
+        <menuitem name="learning_odoo" id="learning_odoo.menu_root"/>
+        <!-- menu categories -->
+        <menuitem name="Menu 1" id="learning_odoo.menu_1" parent="learning_odoo.menu_root"/>
+        <!-- actions -->
+        <menuitem name="Projects" id="learning_odoo.menu_1_list" parent="learning_odoo.menu_1"
+                  action="learning_odoo.action_window"/>
+
+    </data>
+</odoo>

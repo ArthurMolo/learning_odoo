@@ -1,0 +1,16 @@
+<odoo>
+
+
+    <record model="ir.actions.act_window" id="account_action">
+        <field name="name">Accounts</field>
+        <field name="res_model">learning_odoo.account</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="accounts_action_menu" name="Accounts"
+              parent="projektai_menu"
+              action="account_action"/>
+
+
+</odoo>

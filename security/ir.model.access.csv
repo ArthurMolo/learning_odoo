@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_learning_odoo_project,learning_odoo.project,model_learning_odoo_project,base.group_user,1,1,1,1
+access_learning_odoo_account,learning_odoo.account,model_learning_odoo_account,base.group_user,1,1,1,1
+access_learning_odoo_job,learning_odoo.job,model_learning_odoo_job,base.group_user,1,1,1,1
